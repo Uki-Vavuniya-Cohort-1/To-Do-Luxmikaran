@@ -1,0 +1,29 @@
+{
+  "name": "to-do-luxmikaran",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uki-Vavuniya-Cohort-1/To-Do-Luxmikaran.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uki-Vavuniya-Cohort-1/To-Do-Luxmikaran/issues"
+  },
+  "homepage": "https://github.com/Uki-Vavuniya-Cohort-1/To-Do-Luxmikaran#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
