@@ -25,10 +25,10 @@ mongoose.connect(URL, {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 app.get('/Note/:Id', (req, res) => {
-   const productId = req.params.id;
-   const product = products.find(product => product.id === parseInt(1));
-   if (product) {
-      res.send(`Product Details: ${JSON.stringify(product)}`);
+   const UserId = req.params.id;
+   const User = Id.find(User => User.id === parseInt(1));
+   if (Id) {
+      res.send(`Product Details: ${JSON.stringify(Id)}`);
    } else {
       res.status(404).send('Product not found');
    }
@@ -37,3 +37,36 @@ app.get('/Note/:Id', (req, res) => {
    app.listen(3000, () => {
       console.log('Server is running on port 3000');
    });
+
+// Update a product
+app.put('/Note/:id', async (req, res) => {
+   try {
+       const {id} = req.params;
+       await Product.findByIdAndUpdate(id, req.body);
+       const product = await Product.findById(id)
+       if(!product) {
+           return res.status(404).json({message: "Product not found"})
+       }
+       res.status(200).json(product);
+   }
+   catch (err) {
+       console.log(err)
+   }
+}
+)
+app.delete('/Note/:id', async (req, res) => {
+   try {
+       const {id} = req.params;
+       const product = await Product.findByIdAndDelete(id)
+       if(!product) {
+           return res.status(404).json({message: "Note not found"})
+       }
+       res.status(200).json(product)
+       console.log("Deleted")
+       
+   }
+   catch (err) {
+       console.log(err)
+   }
+}
+)
